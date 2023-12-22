@@ -34,8 +34,11 @@ async function run() {
     const taskCollection = database.collection("UserTask");
 
     app.post('/task',async(req,res) =>{
-        const
-    })
+        const newTask = req.body;
+        const result = await taskCollection.insertOne(newTask);
+        res.send(result)
+    });
+
 
     // Database Operations End
 
